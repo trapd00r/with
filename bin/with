@@ -1,13 +1,15 @@
 #!/usr/bin/perl
 use strict;
 my  $APP     = 'with';
-our $VERSION = '0.120';
+our $VERSION = '0.121';
 use feature 'say';
 
 use Carp();
 use Getopt::Long();
 use File::Find::Rule();
 use Pod::Usage();
+
+use File::Copy qw(cp mv);
 #use File::LsColor(); qw(ls_color);
 
 use Data::Dumper();
@@ -24,6 +26,7 @@ if(!@ARGV) {
   Pod::Usage::pod2usage(verbose => 1);
   exit;
 }
+
 
 
 my $opt;
@@ -96,7 +99,7 @@ The Perl code will be injected in a C<for(@_) { ... }> block.
         }
     }
 
-Note that C<say()> is imported for convience.
+C<say()>, C<cp()>, C<mv()> imported for convience.
 
 The C<--depth> flag controls how many directories we'll descend into. The
 default is infinite.
