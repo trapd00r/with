@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 use strict;
 my  $APP     = 'with';
-our $VERSION = '0.121';
+our $VERSION = '0.122';
 use feature 'say';
 
 use Carp();
@@ -116,6 +116,10 @@ default is infinite.
   -m,     --man       show the documentation and exit
 
 =head1 EXAMPLES
+
+Make all files matching PATTERN lowercase.
+
+  with -pattern '\.mp3$' -do 'mv($_, lc($_)) and say("$_ moved to " . lc($_))'
 
 Find all music videos by Laleh, in 720p and mkv format. Print the results with
 LS_COLORS attributes (Need L<File::LsColor>).
