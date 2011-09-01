@@ -19,7 +19,7 @@ WriteMakefile1(
     LICENSE           => q{perl},
     EXE_FILES         => [ q{./bin/with} ],
     PREREQ_PM => {
-      q{WWW::Mechanize::Firefox} => 0,
+      q{File::Find::Rule} => 0,
     },
     MAN1PODS            => {
       q{./bin/with}        => q{blib/man1/with.1},
